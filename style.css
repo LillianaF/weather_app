@@ -6,7 +6,8 @@
 
 body {
   font-family: "montserrat", sans-serif;
-  background-image: url("img/mountain.jpg");
+  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+  /*background-image: url("img/mountain.jpg");*/
   background-size: cover;
   background-position: top center;
 }
@@ -37,7 +38,7 @@ header input {
   outline: none;
   background-color: rgba(225, 225, 225, 0.3);
   border-radius: 16px 0px 16px 0px;
-  border-bottom: 3px solid #df8e00;
+  border-bottom: 3px solid #66a6ff;
   font-size: 20px;
   font-weight: 300;
   transition: 0.2s ease-out;
