@@ -2,7 +2,6 @@ const api = {
   key: "a8cd32c11e3b631b22029bdee78fc285",
   base: "https://api.openweathermap.org/data/2.5/",
 };
-
 const searchbox = document.querySelector(".search-box");
 searchbox.addEventListener("keypress", setQuery);
 
@@ -14,6 +13,8 @@ function changeDegree() {
     (weather.main.temp * 9) / 5 + 32
   )}<span>°F</span>`;
 }*/
+
+object.onload = function () {};
 
 function setQuery(evt) {
   if (evt.keyCode == 13) {
@@ -39,15 +40,17 @@ function displayResults(weather) {
   date.innerText = dateBuilder(now);
 
   let temp = document.querySelector(".current .temp");
-  temp.innerHTML = `${Math.round(weather.main.temp)}<span>°C</span>`;
+  temp.innerHTML = `${Math.round(
+    (weather.main.temp * 9) / 5 + 32
+  )}<span>°F</span>`;
 
   let weather_el = document.querySelector(".current .weather");
   weather_el.innerHTML = weather.weather[0].main;
 
   let hilow = document.querySelector(".hi-low");
-  hilow.innerText = `${Math.round(weather.main.temp_min)}°C / ${Math.round(
-    weather.main.temp_max
-  )}°C`;
+  hilow.innerText = `${Math.round(
+    (weather.main.temp_min * 9) / 5 + 32
+  )}°F / ${Math.round((weather.main.temp_max * 9) / 5 + 32)}°F`;
 }
 
 function dateBuilder(d) {
